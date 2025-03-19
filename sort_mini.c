@@ -6,7 +6,7 @@
 /*   By: safamran <safamran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 09:07:47 by safamran          #+#    #+#             */
-/*   Updated: 2025/03/13 15:04:59 by safamran         ###   ########.fr       */
+/*   Updated: 2025/03/19 15:25:43 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	sort_two(t_stack *stack_a)
 		return ;
 	swap_a(stack_a);
 }
+
 void	sort_three(t_stack *stack_a)
 {
-	printf("here");
 	int	un;
 	int	deux;
 	int	trois;
@@ -33,13 +33,15 @@ void	sort_three(t_stack *stack_a)
 	if (un > deux)
 		swap_a(stack_a);
 	if (stack_a->top->next->value > stack_a->top->next->next->value)
-		rev_rotate(stack_a);
+		rev_rotate_a(stack_a);
 	if (stack_a->top->value > stack_a->top->next->value)
 		swap_a(stack_a);
 }
+
 void	sort_four_five_six(t_stack *stack_a, t_stack *stack_b)
 {
-	int min;
+	int	min;
+
 	while (stack_a->size > 3)
 	{
 		min = return_min(stack_a)->value;

@@ -6,7 +6,7 @@
 /*   By: safamran <safamran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 09:08:05 by safamran          #+#    #+#             */
-/*   Updated: 2025/03/06 13:33:44 by safamran         ###   ########.fr       */
+/*   Updated: 2025/03/19 12:11:00 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ t_element	*return_min(t_stack *stack_a)
 
 t_element	*return_max(t_stack *stack_a)
 {
-	t_element *maillon;
-	t_element *max;
+	t_element	*maillon;
+	t_element	*max;
 
 	if (!stack_a || !stack_a->top || !stack_a->top->next)
 		return (NULL);

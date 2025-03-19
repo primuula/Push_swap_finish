@@ -6,7 +6,7 @@
 /*   By: safamran <safamran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:23:27 by safamran          #+#    #+#             */
-/*   Updated: 2025/03/13 13:17:47 by safamran         ###   ########.fr       */
+/*   Updated: 2025/03/19 12:43:36 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 int	need_bits(t_stack *stack_a)
 {
-    int bits = 0;
-    int max = stack_a->size - 1; // Indice max
-    while ((1 << bits) <= max)
-        bits++;
-    return (bits);
+	int	bits;
+	int	max;
+
+	bits = 0;
+	max = stack_a->size - 1;
+	while ((1 << bits) <= max)
+		bits++;
+	return (bits);
 }
+
 void	index_it(t_stack *stack_a)
 {
 	int			index;
@@ -38,38 +42,30 @@ void	index_it(t_stack *stack_a)
 	}
 }
 
-t_element *return_min_after(t_stack *stack_a)
+t_element	*return_min_after(t_stack *stack_a)
 {
-    if (!stack_a || !stack_a->top)
-        return (NULL);   
-    t_element *maillon;
-    t_element *min = NULL;
+	t_element	*maillon;
+	t_element	*min;
 
-    
-    // Trouver le premier élément non indexé
-    maillon = stack_a->top;
-    while (maillon)
-    {
-        if (maillon->index == 0)
-        {
-            min = maillon;
-            break;
-        }
-        maillon = maillon->next;
-    }
-    
-    if (!min)
-        return (NULL);  // Aucun élément non indexé trouvé
-    
-    // Continuer à chercher le minimum parmi tous les éléments
-    maillon = stack_a->top;
-    while (maillon)
-    {
-        if ( maillon->index == 0 && maillon->value < min->value)
-            min = maillon;
-        maillon = maillon->next;
-    }
-    if (min == NULL)
-        return(NULL);
-    return (min);
+	min = NULL;
+	maillon = stack_a->top;
+	while (maillon)
+	{
+		if (maillon->index == 0)
+		{
+			min = maillon;
+			break ;
+		}
+		maillon = maillon->next;
+	}
+	maillon = stack_a->top;
+	while (maillon && min != NULL)
+	{
+		if (maillon->index == 0 && maillon->value < min->value)
+			min = maillon;
+		maillon = maillon->next;
+	}
+	if (min == NULL)
+		return (NULL);
+	return (min);
 }

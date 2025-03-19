@@ -6,13 +6,12 @@
 /*   By: safamran <safamran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 09:20:16 by safamran          #+#    #+#             */
-/*   Updated: 2025/03/13 11:54:24 by safamran         ###   ########.fr       */
+/*   Updated: 2025/03/19 13:42:17 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// creer la stack
 t_stack	*create_stack(void)
 {
 	t_stack	*stack;
@@ -25,7 +24,6 @@ t_stack	*create_stack(void)
 	return (stack);
 }
 
-// creer l'element
 t_element	*create_element(int value)
 {
 	t_element	*element;
@@ -38,7 +36,7 @@ t_element	*create_element(int value)
 	element->next = NULL;
 	return (element);
 }
-// ajt un element en tete de stack (stack top)
+
 void	push_element(int value, t_stack *stack)
 {
 	t_element	*element;
@@ -57,8 +55,8 @@ void	push_element(int value, t_stack *stack)
 
 void	print_stack(t_stack *stack_a, t_stack *stack_b)
 {
-	t_element	*a;
-	t_element	*b;
+	t_element *a;
+	t_element *b;
 
 	printf("stack A || stack B");
 	printf("\n------------------\n");

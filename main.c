@@ -1,16 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: safamran <safamran@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/03 09:05:45 by safamran          #+#    #+#             */
-/*   Updated: 2025/03/13 15:09:51 by safamran         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-//mimi
 #include "push_swap.h"
 
 int	main(int argc, char *argv[])
@@ -22,7 +9,7 @@ int	main(int argc, char *argv[])
 		return (0);
 	if (argc == 2)
 		stack_a = parse_string(argv[1]);
-	else	
+	else
 		stack_a = parse_it(argc, argv);
 	if (!stack_a)
 	{
@@ -37,12 +24,12 @@ int	main(int argc, char *argv[])
 	}
 	if (verif_sorted(stack_a) == 1)
 	{
-		printf("%s", "Already_sorted\n");
+		write(1, "Already_sorted\n", 15);
 		just_free(stack_a);
 		just_free(stack_b);
 		return (0);
 	}
-	//print_stack(stack_a, stack_b);
+	print_stack(stack_a, stack_b);
 	if (stack_a->size <= 6)
 	{
 		if (stack_a->size == 2)
@@ -53,7 +40,7 @@ int	main(int argc, char *argv[])
 			sort_four_five_six(stack_a, stack_b);
 	}
 	else
-		sort_chunk(stack_a, stack_b);
+		sort_rad(stack_a, stack_b);
 	print_stack(stack_a, stack_b);
 	just_free(stack_a);
 	just_free(stack_b);

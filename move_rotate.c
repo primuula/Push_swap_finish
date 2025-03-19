@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_rotate.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: safamran <safamran@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/19 12:01:59 by safamran          #+#    #+#             */
+/*   Updated: 2025/03/19 12:04:53 by safamran         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	rotate(t_stack *stack)
@@ -13,13 +25,9 @@ void	rotate(t_stack *stack)
 	{
 		der = der->next;
 	}
-	// one est premier et der dernier pointant vers null;
 	stack->top = save_one->next;
-		// le second passe premier (enchainemt avec le reste)
-	save_one->next = NULL;      
-		// devient le "dernier" en le faisant pointer ver NULL;
-	der->next = save_one;       
-		// fait passer one apres le dernier; der pointe vers le nouveau last(ancien premier);
+	save_one->next = NULL;
+	der->next = save_one;
 }
 
 void	rotate_a(t_stack *stack_a)

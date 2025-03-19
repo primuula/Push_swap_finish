@@ -6,7 +6,7 @@
 /*   By: safamran <safamran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 17:28:18 by safamran          #+#    #+#             */
-/*   Updated: 2025/03/13 14:51:58 by safamran         ###   ########.fr       */
+/*   Updated: 2025/03/19 12:15:16 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	swap_a(t_stack *stack)
 	swap(stack);
 	write(1, "sa\n", 3);
 }
+
 void	swap_b(t_stack *stack)
 {
 	swap(stack);
